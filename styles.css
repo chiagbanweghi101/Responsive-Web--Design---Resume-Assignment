@@ -1,0 +1,755 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: sans-serif;
+}
+
+html {
+    font-size: 60%;
+    overflow-x: hidden;
+}
+
+:root {
+    --big-color: #000000;
+    --second-big-color: #001005;
+    --text-colour: white;
+    --main-colour: #5ddd07f7;
+}
+
+body {
+    background: var(--big-color);
+    color: var(--text-colour);
+}
+
+/* Header Navigation */
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 4rem 12%;
+    background: rgba(0, 0, 0, 0.955);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--main-colour);
+    display: none;
+}
+
+/* Logo */
+.logo {
+    font-size: 3rem;
+    color: var(--text-colour);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+span {
+    color: var(--main-colour);
+}
+
+/* Navigation Links */
+.navbar a {
+    font-size: 1.8rem;
+    color: var(--text-colour);
+    margin-left: 4rem;
+    font-weight: 500;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover {
+    border-bottom: 3px solid var(--main-colour);
+    color: var(--main-colour);
+}
+
+.navbar {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Hide navbar on mobile */
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        background-color: black;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 50%;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    #menu-icon {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+}
+
+/* Sections */
+section {
+    min-height: 100vh;
+    padding: 2.5rem 40%;
+}
+
+/* Home Section */
+/* Home Section */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem; /* Adjust space between text and image */
+    height: 100vh; /* Make sure it fills the viewport */
+    padding: 15rem 12%;
+    flex-wrap: wrap; /* Allows elements to move down if needed */
+    text-align: left;
+}
+
+/* Ensure text and image take proper space */
+.home-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.home-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-img img {
+    width: 32vw;
+    max-width: 300px;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-colour);
+    transition: 0.4s ease-in-out;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 1024px) {
+    .home {
+        flex-direction: column;
+        padding: 10rem 8%;
+        text-align: center;
+        height: auto;
+    }
+
+    .home-content {
+        max-width: 90%;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+
+    .home-content h3 {
+        font-size: 3rem;
+    }
+
+    .home-content p {
+        font-size: 1.2rem;
+    }
+
+    .home-img img {
+        width: 50vw;
+        max-width: 250px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home {
+        padding: 8rem 5%;
+        gap: 3rem;
+    }
+
+    .home-content {
+        max-width: 100%;
+    }
+
+    .home-content h1 {
+        font-size: 4rem;
+    }
+
+    .home-content h3 {
+        font-size: 2.5rem;
+    }
+
+    .home-content p {
+        font-size: 1.1rem;
+    }
+
+    .home-img img {
+        width: 60vw;
+        max-width: 220px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .home {
+        padding: 6rem 5%;
+        gap: 2rem;
+    }
+
+    .home-content h1 {
+        font-size: 3rem;
+    }
+
+    .home-content h3 {
+        font-size: 2rem;
+    }
+
+    .home-content p {
+        font-size: 1rem;
+    }
+
+    .home-img img {
+        width: 70vw;
+        max-width: 200px;
+    }
+}
+
+/* Home Content */
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center content horizontally */
+    text-align: center;
+    /* Center text */
+}
+
+.home-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 15rem;
+    line-height: 1;
+}
+
+.home-content h3 {
+    font-size: 4rem;
+    margin: 1rem 0;
+}
+
+.home-content p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+/* Home Image */
+.home-img {
+    display: flex;
+    justify-content: center;
+    /* Center the image */
+    align-items: center;
+}
+
+.home-img img {
+    width: 32vw;
+    /* Image width */
+    border-radius: 50%;
+    /* Make image circular */
+    box-shadow: 0 0 25px var(--main-colour);
+    /* Shadow effect */
+    transition: 0.4s ease-in-out;
+    justify-items: center;
+}
+
+.home-img img:hover {
+    box-shadow: 0 0 25px var(--main-colour),
+        0 0 50px var(--main-colour),
+        0 0 100px var(--main-colour);
+    /* More shadow on hover */
+}
+
+
+/* Home Image */
+.home-img img {
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-colour);
+    transition: 0.4s ease-in-out;
+}
+
+.home-img img:hover {
+    box-shadow: 0 0 25px var(--main-colour),
+        0 0 50px var(--main-colour),
+        0 0 100px var(--main-colour);
+}
+
+/* Social Icons */
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    padding: 1rem;
+    background: transparent;
+    border: 2px solid var(--main-colour);
+    border-radius: 50%;
+    color: var(--main-colour);
+    margin: 3rem 0.5rem;
+    transition: 0.3s ease;
+}
+
+/* Style for the horizontal rule */
+.social-hr {
+    border: 0;
+    /* Remove default border */
+    border-top: 2px solid var(--main-colour);
+    /* Set the top border as the rule */
+    width: 100%;
+    /* Make the horizontal rule span across the entire width of the page */
+    margin: 2rem 0;
+    /* Optional: control vertical space, no horizontal margins */
+    opacity: 0.7;
+    /* Optional: make the line slightly transparent */
+}
+
+.social-icons a:hover {
+    color: var(--text-colour);
+    background-color: var(--main-colour);
+    transform: scale(1.2) translateY(-5px);
+    box-shadow: 0 0 25px var(--main-colour);
+}
+
+/* Button Group */
+.btn-group {
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 1rem 3rem;
+    background: var(--main-colour);
+    border-radius: 3rem;
+    font-size: 1.8rem;
+    background-color: black;
+    border: 2px solid var(--main-colour);
+    color: var(--main-colour);
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+
+.cbtn {
+    display: inline-block;
+    padding: 1rem 3rem;
+    background: var(--main-colour);
+    border-radius: 3rem;
+    font-size: 1.8rem;
+    background-color: black;
+    border: 2px solid var(--main-colour);
+    color: var(--main-colour);
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+
+.cbtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--main-colour),
+        0 0 50px var(--main-colour);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--main-colour),
+        0 0 50px var(--main-colour);
+}
+
+.btn-group a:nth-of-type(2) {
+    background-color: rgb(1, 1, 1);
+    color: var(--main-colour);
+    border: 2px solid var(--main-colour);
+}
+
+.btn-group a:nth-of-type(2):hover {
+    box-shadow: 0 0 25px var(--main-colour);
+    background-color: var(--main-colour);
+    color: black;
+}
+/* About Section */
+.about {
+    display: flex;
+    flex-direction: column-reverse; /* Moves the image to the top */
+    justify-content: center;
+    align-items: center;
+    gap: 3rem; /* Adjust spacing */
+    background-color: var(--second-big-color);
+    text-align: center; /* Center text */
+    padding: 5rem 10%; /* Add spacing */
+}
+
+/* About Image */
+.about-img img {
+    width: 32vw;
+    max-width: 300px; /* Prevents the image from getting too large */
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-colour);
+    transition: 0.4s ease-in-out;
+}
+
+/* Hover Effect */
+.about-img img:hover {
+    box-shadow: 0 0 25px var(--main-colour),
+        0 0 25px var(--main-colour),
+        0 0 10px var(--main-colour);
+}
+
+/* About Content */
+.about-content h2 {
+    font-size: 3rem; /* Adjust text size */
+    text-align: center;
+}
+
+.about-content p {
+    font-size: 1.5rem;
+    text-align: center;
+    max-width: 600px; /* Ensures readable text */
+}
+
+.about-content .btn {
+    margin: 2rem 0;
+}
+
+/* Services Section */
+.services {
+     padding: 5rem 12%;
+}
+
+.services-content h2 {
+    font-size: 6rem;
+    margin-bottom: 2rem;
+}
+
+.services-content p {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+}
+
+.services-content ul {
+    list-style: none;
+    font-size: 1.8rem;
+}
+
+.services-content ul li {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.services-content ul li i {
+    color: var(--main-colour);
+    margin-right: 1rem;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden; /* Hides overflow to create a carousel effect */
+    margin: 0 auto; /* Centering the carousel */
+}
+
+.carousel {
+    display: flex; /* Align images in a row */
+    transition: transform 0.5s ease; /* Smooth transition */
+}
+
+.carousel img {
+    min-width: 100%; /* Each image takes full width */
+    max-width: 100%; /* Ensure images don’t exceed container width */
+    display: block; /* Prevents inline spacing */
+    border-radius: 10px; /* Optional: add rounded corners to images */
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 10; /* Ensure buttons are above the images */
+    font-size: 2rem; /* Button size */
+    border-radius: 50%; /* Rounded buttons */
+}
+
+button.prev {
+    left: 10px; /* Position left */
+}
+
+button.next {
+    right: 10px; /* Position right */
+}
+
+/* Optional styles for hover effect on buttons */
+button.prev:hover, button.next:hover {
+    background-color: rgba(255, 255, 255, 0.5); /* Lighter on hover */
+}
+
+@media (max-width: 768px) {
+    button.prev, button.next {
+        padding: 0.5rem; /* Smaller buttons on mobile */
+        font-size: 1.5rem; /* Adjust font size */
+    }
+
+    .carousel img {
+        border-radius: 5px; /* Slightly smaller rounding on mobile */
+    }
+
+    .about-img{
+        display: none;
+    }
+}
+
+/* Projects Section */
+.projects {
+    padding: 5rem 10%;
+    text-align: center;
+    background-color: var(--second-big-color);
+}
+
+.section-title {
+    font-size: 3rem;
+    color: var(--main-colour);
+    margin-bottom: 2rem;
+}
+
+/* Projects Container */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* Project Card */
+.project-card {
+    background: #222;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--main-colour);
+    width: 300px;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--main-colour);
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+/* Project Title */
+.project-card h3 {
+    font-size: 2rem;
+    color: #fff;
+}
+
+/* Project Description */
+.project-card p {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+/* GitHub Button */
+.project-card .btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: var(--main-colour);
+    color: #111;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.project-card .btn:hover {
+    background: #fff;
+    color: #111;
+}
+
+
+
+
+
+.contact-section {
+    padding: 80px 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.cont-box{
+    width: 100%;
+    text-align: center;
+}
+.contact-h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    display: inline-block;
+    padding: 10px 20px;
+    align-items: center;
+}
+
+
+.contact-info {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    gap: 10px;
+    /* width: 100rem; */
+    padding: 40px;
+    margin-top: 5rem;
+   
+
+}
+
+.info-box {
+    background: #ebf2e8; 
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    border-color: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    gap: 20px;
+    
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+}
+
+.info-box i {
+    font-size: 30px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.info-box h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.info-box p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+}
+.cont-box {
+    margin-top: 2px;
+
+}
+/* contact form  */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+
+    }
+    .contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #25f452db;
+    border-radius: 5px;
+    background: #222;
+    color: #fff;
+    }
+    .contact-form button {
+    background-color: #4bda09;
+    color: #111;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+    }
+    .contact-form button:hover {
+    background: #fff;
+    color: #111;
+    }
+
+/* Social Icons */
+.social-icons-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem; /* Space between icons */
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.social-icons-bottom a {
+    font-size: 3rem;
+    padding: 1rem;
+    border: 2px solid var(--main-colour);
+    border-radius: 50%;
+    color: var(--main-colour);
+    transition: 0.3s ease-in-out;
+}
+
+.social-icons-bottom a:hover {
+    background-color: var(--main-colour);
+    color: var(--text-colour);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--main-colour);
+}
+
+  
